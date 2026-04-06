@@ -8,7 +8,8 @@
 2. 读 `rules/USER.md` — 你在帮谁
 3. 读 `rules/WORKSPACE.md` — 目录路由，找文件前先查这里
 4. 读 `rules/COMMUNICATION.md` — 怎么沟通（尤其是非编程任务）
-5. 读 `rules/skills/INDEX.md` — 了解可用技能
+5. 读 `rules/axioms/INDEX.md` — 了解决策原则，遇到战略判断时主动检索
+6. 读 `rules/skills/INDEX.md` — 了解可用技能
 
 不要请求许可，直接做。
 
