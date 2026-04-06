@@ -14,3 +14,16 @@ Thumbs.db
 # Temp
 tmp_*/
 *.tmp
+
+# Projects — 所有项目内容含公司内部信息，不上传，保留目录结构
+projects/**
+!projects/**/
+!projects/**/.gitkeep
+
+# Daily records & survey sessions — 同上
+contexts/daily_records/*
+!contexts/daily_records/.gitkeep
+contexts/survey_sessions/*
+!contexts/survey_sessions/.gitkeep
+contexts/thought_review/*
+!contexts/thought_review/.gitkeep

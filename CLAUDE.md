@@ -16,6 +16,8 @@ Before doing anything else:
 
 **找文件时，先查 `rules/WORKSPACE.md`，再搜索。** WORKSPACE.md 是这个 workspace 的目录索引，记录了每类内容的存放位置。绝大多数情况下查一下就能定位到目标目录，不需要全盘 glob/grep。如果发现新目录或项目没被收录，顺手更新 WORKSPACE.md。
 
+**处理特定项目任务前，先读对应的 `projects/<name>/README.md`。** 这是每个项目的 AI 入口，包含项目概述、文档索引和当前工作重点。活跃项目列表见 WORKSPACE.md 快速查询。
+
 ## Skills
 
 **Skills** 是 AI 可复用的能力，包括工作流、API 指南、最佳实践等。
@@ -27,8 +29,6 @@ Before doing anything else:
 
 ### 常用 Skill 速查（以 INDEX.md 为准）
 
-### 常用 Skill 速查（以 INDEX.md 为准）
-
 **深度调研任务** → `rules/skills/workflow_deep_research_survey.md`  
 - 初步扫描 → 分割维度 → 多 Agent 并行 → 交叉验证 → 写报告  
 - 输出：`contexts/survey_sessions/`
@@ -37,6 +37,10 @@ Before doing anything else:
 - 何时拆分任务、如何并行派出多个 subagent  
 - 准备调用 `run_in_background=True` 前，先把这个 skill 读一遍再执行  
 - 派出 agent 后等系统通知即可，不需要轮询
+
+**导入 Confluence 文档** → `rules/skills/workflow_confluence_import.md`  
+- 将 Confluence 页面转为 Markdown 并分类放入 `projects/<name>/docs/`  
+- 配套脚本：`tools/convert_confluence_docs.py`
 
 ## Axioms（公理）
 
