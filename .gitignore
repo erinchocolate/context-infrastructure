@@ -24,10 +24,12 @@ projects/**
 !projects/**/
 !projects/**/.gitkeep
 
-# Daily log, research & learning — 同上
+# Daily log, research, learning & memory — 同上
 contexts/daily_log/*
 !contexts/daily_log/.gitkeep
 contexts/research/*
 !contexts/research/.gitkeep
 contexts/learning/*
 !contexts/learning/.gitkeep
+contexts/memory/*
+!contexts/memory/.gitkeep
