@@ -31,9 +31,9 @@ contexts/
   memory/                        # 记忆系统
     OBSERVATIONS.md              # 每日观察 + 每周反思
     PROMPTS.md                   # Observer/Reflector prompt 模板
-  survey_sessions/               # 调研报告
-  thought_review/                # 思考与复盘
-  daily_records/                 # 每日日志
+  research/                      # 调研报告
+  learning/                      # 学到的东西 / 复盘
+  daily_log/                     # 每日个人活动记录
 adhoc_jobs/                      # 临时项目
 ```
 

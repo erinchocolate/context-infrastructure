@@ -31,7 +31,7 @@ Before doing anything else:
 
 **深度调研任务** → `rules/skills/workflow_deep_research_survey.md`  
 - 初步扫描 → 分割维度 → 多 Agent 并行 → 交叉验证 → 写报告  
-- 输出：`contexts/survey_sessions/`
+- 输出：`contexts/research/`
 
 **调用后台 Agent / 并行 Subagent** → `rules/skills/workflow_parallel_subagents.md`  
 - 何时拆分任务、如何并行派出多个 subagent  

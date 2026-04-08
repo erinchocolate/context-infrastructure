@@ -62,9 +62,9 @@
 | 一次性任务、脚本 | `adhoc_jobs/<name>/` |
 | 工具脚本 | `tools/` |
 | 定时任务 | `periodic_jobs/` |
-| 调研报告 | `contexts/survey_sessions/` |
-| 思考 / 复盘 | `contexts/thought_review/` |
-| 每日日志 | `contexts/daily_records/` |
+| 调研报告 | `contexts/research/` |
+| 学到的东西 / 复盘 | `contexts/learning/` |
+| 每日个人活动记录 | `contexts/daily_log/` |
 | 可复用 Skills | `rules/skills/` |
 | 核心 Axioms | `rules/axioms/` |
 

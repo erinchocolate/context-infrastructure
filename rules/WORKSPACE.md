@@ -11,9 +11,9 @@
 - 定时任务：`periodic_jobs/
 
 ### 知识与记录
-- 通用调研报告：`contexts/survey_sessions/`
-- 思考 / 复盘 / 方法论：`contexts/thought_review/`
-- 每日日志：`contexts/daily_records/`
+- 通用调研报告：`contexts/research/`
+- 学到的东西 / 复盘 / 方法论：`contexts/learning/`
+- 每日个人活动记录（与 project 无关）：`contexts/daily_log/`
 
 ### 系统与规则
 - 可复用技术方案 / Skill：`rules/skills/`
@@ -26,7 +26,7 @@
 - 临时项目：`tmp_<name>/`
 - **带日期的文档统一格式：`YYYYMMDD_<name>.md`**
   - 例：`20260408_auto_trigger_chunking_on_table_change.md`
-  - 适用范围：meetings、decisions、adhoc_jobs 下所有带时间戳的文档
+  - 适用范围：meetings、decisions、adhoc_jobs、daily_log 下所有带时间戳的文档
   - 日期取文档创建当天，不用分隔符（不用 `2026-04-08` 或 `2026_04_08`）
 
 ## Python 环境

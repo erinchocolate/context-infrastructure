@@ -43,9 +43,10 @@
 
 | 内容 | 存放路径 |
 |---|---|
-| 会议记录、决策文档 | `contexts/daily_records/YYYYMMDD_<name>.md` |
-| 技术调研、竞品分析 | `contexts/survey_sessions/YYYYMMDD_<name>.md` |
-| 架构复盘、方法论思考 | `contexts/thought_review/<name>.md` |
+| 每日个人活动记录（与 project 无关） | `contexts/daily_log/YYYYMMDD_<name>.md` |
+| 会议记录、决策文档 | `projects/<project>/` 或 `adhoc_jobs/<project>/` |
+| 技术调研、研究报告 | `contexts/research/YYYYMMDD_<name>.md` |
+| 学到的东西、架构复盘、方法论思考 | `contexts/learning/<name>.md` |
 | 代码实验、一次性脚本 | `adhoc_jobs/<project>/` |
 
 新目录/项目记得更新 `rules/WORKSPACE.md`。

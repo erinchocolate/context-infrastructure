@@ -66,7 +66,7 @@ python tools/semantic_search/main.py \
     ```bash
     mkdir -p tmp
     # 示例：搜索博客和调研报告
-    find contexts/blog/content contexts/survey_sessions -name "*.md" > tmp/search_files.txt
+    find contexts/blog/content contexts/research -name "*.md" > tmp/search_files.txt
     ```
 2.  **执行语义搜索**：
     ```bash
@@ -83,8 +83,8 @@ python tools/semantic_search/main.py \
 
 搜索用户的知识库时，优先考虑以下路径：
 - `contexts/blog/content/`：深度技术文章与核心思考。
-- `contexts/daily_records/`：每日日志，记录了最真实的想法演变。
-- `contexts/survey_sessions/`：深度调研结论。
+- `contexts/daily_log/`：每日个人活动记录，记录了最真实的想法演变。
+- `contexts/research/`：深度调研结论。
 - `contexts/life_record/data/`：生活录音转录（含每日生活摘要和会议记录）。
   - 2026年数据：`contexts/life_record/data/<YYYYMMDD>/`
   - 2025年数据：`contexts/life_record/data/2025/<YYYYMMDD>/`

@@ -24,10 +24,10 @@ projects/**
 !projects/**/
 !projects/**/.gitkeep
 
-# Daily records & survey sessions — 同上
-contexts/daily_records/*
-!contexts/daily_records/.gitkeep
-contexts/survey_sessions/*
-!contexts/survey_sessions/.gitkeep
-contexts/thought_review/*
-!contexts/thought_review/.gitkeep
+# Daily log, research & learning — 同上
+contexts/daily_log/*
+!contexts/daily_log/.gitkeep
+contexts/research/*
+!contexts/research/.gitkeep
+contexts/learning/*
+!contexts/learning/.gitkeep

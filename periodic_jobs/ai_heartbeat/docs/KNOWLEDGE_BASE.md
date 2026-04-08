@@ -24,7 +24,7 @@
 - **校验**: 必须读取 Markdown Header 中的 `Date` 字段。仅当 `Date` 为今天或当前观测区间时，才视为有效。忽略格式重排导致的旧文章误报。
 
 ### 2.3 路径白名单与黑名单
-- **忽略**: `contexts/daily_records/` (机械重复性数据)。
+- **忽略**: `contexts/daily_log/` (机械重复性数据).
 - **包含**: `contexts/life_record/` 及其子目录下的 `.csv` 文件。
 
 ## 3. 记忆系统分级规范 (Memory Tiering System)
