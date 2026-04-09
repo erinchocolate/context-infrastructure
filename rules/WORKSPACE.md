@@ -8,7 +8,6 @@
 - **持续进行的项目上下文**（文档、会议记录、决策、状态）：`projects/<project>/`
 - 写代码 / 跑脚本 / 一次性项目：`adhoc_jobs/<project>/`
 - 工具脚本（邮件、语义搜索、分享报告等）：`tools/`
-- 定时任务：`periodic_jobs/
 
 ### 知识与记录
 - 通用调研报告：`contexts/research/`
@@ -18,8 +17,6 @@
 ### 系统与规则
 - 可复用技术方案 / Skill：`rules/skills/`
 - 核心公理（Axioms）：`rules/axioms/`
-- 记忆系统：`contexts/memory/` + `periodic_jobs/ai_heartbeat/`
-- GitHub Copilot session 入口：`.github/copilot-instructions.md`（等价于 CLAUDE.md）
 
 ## 命名规则
 - 目录和文件名：小写 + 下划线 (snake_case)
@@ -38,7 +35,6 @@
 | 文件 | 用途 |
 |---|---|
 | `tools/convert_confluence_docs.py` | Confluence .doc → Markdown 批量转换脚本（配合 `rules/skills/workflow_confluence_import.md`） |
-| `tools/opencode_job.py` | 调用 OpenCode agent 的工具脚本 |
 | `tools/semantic_search/` | 语义搜索工具（见 `rules/skills/semantic_search.md`） |
 
 ## 快速查询

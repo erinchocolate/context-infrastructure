@@ -57,8 +57,6 @@
 
 **这是整个系统最重要的一步。**
 
-#### 方式 A：手动（推荐，适合公司环境）
-
 在 Claude Code 里粘贴（模板也在 `contexts/memory/PROMPTS.md`）：
 
 ```
@@ -72,33 +70,6 @@
 - 只记录有认知价值的内容，不机械记录每个操作
 - 如果今天没有值得记录的观察，就不写
 - 一条观察不超过 2-3 句话
-```
-
-#### 方式 B：自动脚本（需要 OpenCode server 运行）
-
-```bash
-cd /opt/processes/mc_platform/context-infrastructure
-.venv/bin/python periodic_jobs/ai_heartbeat/src/v0/observer.py
-# 运行时间约 5-15 分钟，等待 "Task complete" 后检查 OBSERVATIONS.md
-```
-
-**红黄绿标准**：
-- 🔴 红：3 个月后仍有复用价值的跨项目模式。每天能有一条就很好，没有就不写
-- 🟡 黄：项目决策和进展，未来几周需要参考
-- 🟢 绿：执行记录，1-2 周后会被 Reflector 清理
-
-**写出来的样子**：
-
-```
-## 2026-04-08
-
-🔴 调试 OpenCode API 空响应时，优先查 server 日志（journalctl --user -u opencode）
-   而非猜测——日志直接暴露了 agent 名称已改版的问题，节省了大量排查时间。
-
-🟡 [context-infrastructure] AI Heartbeat 安装完成，手动触发需在
-   context-infrastructure 目录下运行，自动脚本依赖 OpenCode server 在 4096 端口运行。
-
-🟢 完成 observer.py / reflector.py 路径配置，systemd service 和 crontab 已设置。
 ```
 
 ---
@@ -124,18 +95,6 @@ cd /opt/processes/mc_platform/context-infrastructure
 5. 合并重复的黄色条目
 6. 将反思结果追加到 OBSERVATIONS.md 的"周反思"区域
 ```
-
-#### 方式 B：自动脚本
-
-```bash
-cd /opt/processes/mc_platform/context-infrastructure
-.venv/bin/python periodic_jobs/ai_heartbeat/src/v0/reflector.py
-```
-
-**晋升标准**——同时满足以下三点才晋升：
-1. 跨项目通用（不只适用于某个特定场景）
-2. 多次验证（在观察记录里出现过 2 次以上）
-3. 有明确应用场景（知道什么时候该用）
 
 **晋升目标文件**：
 
@@ -189,11 +148,6 @@ cd /opt/processes/mc_platform/context-infrastructure
 
 **每当你需要向 AI 解释同一个流程第二次——写成 skill。**
 
-### 关于数据安全（公司环境）
-
-手动方式（方式 A）内容不离开本机，适合公司环境。
-自动脚本（方式 B）会将工作空间内容发送给 OpenCode Zen 的外部服务器，使用前确认符合公司 IT 政策。
-
 ### CLAUDE.md 膨胀问题
 
 超过 ~200 行就拆分为子文件引用。Context window 是有限资源，密度比长度重要。
@@ -210,4 +164,3 @@ cd /opt/processes/mc_platform/context-infrastructure
 | `rules/skills/INDEX.md` | 所有 skill 的索引 |
 | `contexts/memory/OBSERVATIONS.md` | 每日观察的积累地 |
 | `contexts/memory/PROMPTS.md` | 手动触发观察/反思的 prompt 模板 |
-| `periodic_jobs/ai_heartbeat/docs/SETUP_LOG.md` | AI Heartbeat 安装配置记录 |

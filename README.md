@@ -1,6 +1,6 @@
 # mc-context-infrastructure
 
-美乔的个人 AI context 基建系统，基于 [grapeot/context-infrastructure](https://github.com/grapeot/context-infrastructure) 的设计哲学搭建，适配 Claude Code 工作流。
+美乔的个人 AI context 基建系统，基于 [grapeot/context-infrastructure](https://github.com/grapeot/context-infrastructure) 的设计哲学搭建。
 
 ## 设计理念
 

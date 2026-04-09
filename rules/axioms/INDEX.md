@@ -63,10 +63,10 @@
 
 | ID | 公理 | 核心含义 |
 |----|------|----------|
-| T02 | [结果确定性优于过程确定性](t02_results_certainty.md) | 验证输出，不强制流程 |
-| T03 | [上下文隔离是多 Agent 价值](t03_context_isolation.md) | 隔离信息域，不模仿组织结构 |
-| T05 | [认知是资产，代码是消耗品](t05_cognition_asset.md) | 代码生成成本趋零时，理解是核心 |
-| T08 | [第一性原理方法论设计](t08_first_principles_methodology.md) | 先质疑框架是否解决问题 |
+| T01 | [结果确定性优于过程确定性](t01_results_certainty.md) | 验证输出，不强制流程 |
+| T02 | [上下文隔离是多 Agent 价值](t02_context_isolation.md) | 隔离信息域，不模仿组织结构 |
+| T03 | [认知是资产，代码是消耗品](t03_cognition_asset.md) | 代码生成成本趋零时，理解是核心 |
+| T04 | [第一性原理方法论设计](t04_first_principles_methodology.md) | 先质疑框架是否解决问题 |
 
 ---
 

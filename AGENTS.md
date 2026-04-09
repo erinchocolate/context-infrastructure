@@ -1,4 +1,4 @@
-# CLAUDE.md - 美乔的 Context Infrastructure
+# AGENTS.md - 美乔的 Context Infrastructure
 
 This folder is home. Treat it that way.
 
