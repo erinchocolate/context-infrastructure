@@ -37,13 +37,6 @@ contexts/
 adhoc_jobs/                      # 临时项目
 ```
 
-## 使用方式
-
-1. Clone 到本地工作目录
-2. 在 Claude Code 中打开此目录，CLAUDE.md 会自动加载
-3. 工作结束时用 `contexts/memory/PROMPTS.md` 中的模板触发每日观察
-4. 每周末触发周反思，蒸馏高价值观察为 axiom 或 skill
-
 ## 致谢
 
 架构设计参考了 [grapeot/context-infrastructure](https://github.com/grapeot/context-infrastructure)。
