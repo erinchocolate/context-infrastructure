@@ -6,36 +6,36 @@
 
 ### 项目与代码
 - **持续进行的项目上下文**（文档、会议记录、决策、状态）：`projects/<project>/`
-- 写代码 / 跑脚本 / 一次性项目：`adhoc_jobs/<project>/`
-- 工具脚本（邮件、语义搜索、分享报告等）：`tools/`
+- 写代码 / 跑脚本 / 一次性项目：`01 raw/<project>/`
+- 工具脚本（邮件、语义搜索、分享报告等）：`03 refined/tools/`
 
 ### 知识与记录
-- 通用调研报告：`contexts/research/`
-- 学到的东西 / 复盘 / 方法论：`contexts/learning/`
-- 每日个人活动记录（与 project 无关）：`contexts/daily_log/`
+- 原始输入（对话记录、调研资料、未加工笔记）：`01 raw/`
+- 加了个人理解的复盘 / 结构化反思 / 方法论笔记：`02 trusted/`
+- 每日观察 + 每周反思（OBSERVATIONS.md）：`02 trusted/OBSERVATIONS.md`
 
 ### 系统与规则
-- 可复用技术方案 / Skill：`rules/skills/`
-- 核心公理（Axioms）：`rules/axioms/`
+- 可复用技术方案 / Skill：`03 refined/skills/`
+- 核心公理（Axioms）：`03 refined/axioms/`
 
 ## 命名规则
 - 目录和文件名：小写 + 下划线 (snake_case)
 - 临时项目：`tmp_<name>/`
 - **带日期的文档统一格式：`YYYYMMDD_<name>.md`**
   - 例：`20260408_auto_trigger_chunking_on_table_change.md`
-  - 适用范围：meetings、decisions、adhoc_jobs、daily_log 下所有带时间戳的文档
+  - 适用范围：01 raw、02 trusted 下所有带时间戳的文档
   - 日期取文档创建当天，不用分隔符（不用 `2026-04-08` 或 `2026_04_08`）
 
 ## Python 环境
 - 根目录 `.venv/` 为工作区级环境，用 `uv pip install` 管理依赖
-- 需要隔离时在 `adhoc_jobs/<project>/.venv/` 建独立环境
+- 需要隔离时在 `01 raw/<project>/.venv/` 建独立环境
 
 ## 工具索引
 
 | 文件 | 用途 |
 |---|---|
-| `tools/convert_confluence_docs.py` | Confluence .doc → Markdown 批量转换脚本（配合 `rules/skills/workflow_confluence_import.md`） |
-| `tools/semantic_search/` | 语义搜索工具（见 `rules/skills/semantic_search.md`） |
+| `03 refined/tools/confluence/convert_confluence_docs.py` | Confluence .doc → Markdown 批量转换脚本（见 `03 refined/skills/workflow_confluence_sync.md`） |
+| `03 refined/tools/semantic_search/` | 语义搜索工具（见 `03 refined/skills/semantic_search.md`） |
 
 ## 快速查询
 

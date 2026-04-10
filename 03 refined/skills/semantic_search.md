@@ -3,7 +3,7 @@
 
 `semantic-search` 是一个**通用语义搜索工具**，可对任意本地文本文件建索引并做自然语言查询。它超越关键词匹配，理解语义层面的关联，适用于任何需要从大量文本中按意义而非字面检索内容的场景。
 
-最典型的使用场景是搜索用户的个人知识库（博客、日志、调研报告），但工具本身不限于此。`--file-list` 可以指向任何文本文件集合：聊天记录、第三方文档、调研素材、代码注释等。
+最典型的使用场景是搜索用户的个人知识库（日志、调研报告），但工具本身不限于此。`--file-list` 可以指向任何文本文件集合：聊天记录、第三方文档、调研素材、代码注释等。
 
 **对于用户的知识库，这是获取深层偏好和个人哲学的核心工具，是实现 AI Heartbeat Step 2 (Reflection Layer) 的关键基础设施。**
 
@@ -25,7 +25,7 @@
 ### 1.2 触发建议
 
 **主动触发（务必执行）**：
- 当你在构建 `rules/axioms/` 下的公理文档时
+ 当你在构建 `03 refined/axioms/` 下的公理文档时
  当任务涉及用户的核心价值观、方法论或哲学体系时
  当你需要理解用户在某个领域的"思想演变史"时
  当你在做反思层工作（沉淀公理、深度复盘）时
@@ -45,7 +45,7 @@
 
 ### 2.1 核心命令
 ```bash
-python tools/semantic_search/main.py \
+python 03\ refined/tools/semantic_search/main.py \
     --file-list tmp/search_files.txt \
     --query "<自然语言查询语句>" \
     --top-k 10 \
@@ -62,17 +62,17 @@ python tools/semantic_search/main.py \
 
 ## 3. 标准工作流
 
-1.  **准备文件列表**：根据需求筛选知识库区域（参考 `rules/WORKSPACE.md`）。
+1.  **准备文件列表**：根据需求筛选知识库区域（参考 `03 refined/WORKSPACE.md`）。
     ```bash
     mkdir -p tmp
-    # 示例：搜索博客和调研报告
-    find contexts/blog/content contexts/research -name "*.md" > tmp/search_files.txt
+    # 示例：搜索 01 raw 和 02 trusted 下所有 markdown 文件
+    find 01\ raw 02\ trusted -name "*.md" > tmp/search_files.txt
     ```
 2.  **执行语义搜索**：
     ```bash
     source .venv/bin/activate
     export OPENAI_API_KEY=$(grep OPENAI_API_KEY .env | cut -d '=' -f2)
-    python tools/semantic_search/main.py --file-list tmp/search_files.txt --query "..." --top-k 10 --cache-dir .knowledge_cache
+    python 03\ refined/tools/semantic_search/main.py --file-list tmp/search_files.txt --query "..." --top-k 10 --cache-dir .knowledge_cache
     ```
 3.  **分析与综合**：阅读搜索结果（通常包含 score, source_file, text），结合元数据（日期、分类）进行综合分析。
 4.  **清理**：任务完成后删除 `tmp/search_files.txt`。
@@ -82,30 +82,22 @@ python tools/semantic_search/main.py \
 ## 4. 常用搜索路径
 
 搜索用户的知识库时，优先考虑以下路径：
-- `contexts/blog/content/`：深度技术文章与核心思考。
-- `contexts/daily_log/`：每日个人活动记录，记录了最真实的想法演变。
-- `contexts/research/`：深度调研结论。
-- `contexts/life_record/data/`：生活录音转录（含每日生活摘要和会议记录）。
-  - 2026年数据：`contexts/life_record/data/<YYYYMMDD>/`
-  - 2025年数据：`contexts/life_record/data/2025/<YYYYMMDD>/`
-  - 每日摘要 `.md` 和原始 transcript `.csv` 都可搜索
-- `rules/skills/`：方法论沉淀。
+- `01 raw/`：所有原始输入，包括对话记录、调研资料、未加工笔记。
+- `02 trusted/`：加了个人理解的复盘、结构化反思（含 OBSERVATIONS.md）。
+- `03 refined/skills/`：方法论沉淀。
 
 以上是常用快捷路径。`--file-list` 可以指向任何文本文件集合，例如：
 ```bash
-# 搜索生活转录（含2025和2026）
-find contexts/life_record/data -name "*.md" -not -path "*/.venv/*" > tmp/search_files.txt
+# 搜索所有原始输入
+find 01\ raw -name "*.md" -not -path "*/.venv/*" > tmp/search_files.txt
 
-# 搜索微信聊天记录
-find contexts/wechat -name "*.csv" > tmp/search_files.txt
+# 搜索某个项目的所有素材
+find projects/<project-name> -name "*.md" > tmp/search_files.txt
 
-# 搜索某个调研项目的所有素材
-find contexts/<your-project> -name "*.md" > tmp/search_files.txt
-
-# 搜索任意临时文档
-ls adhoc_jobs/some_project/*.txt > tmp/search_files.txt
+# 搜索 01 raw 下某个子目录
+find "01 raw/<your-project>" -name "*.md" > tmp/search_files.txt
 ```
 
 ---
-**版本**: 1.2.0
-**最后更新**: 2026-03-15
+**版本**: 1.3.0
+**最后更新**: 2026-04-11

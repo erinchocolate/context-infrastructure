@@ -13,7 +13,7 @@
 
 ### ☀️ 早晨：开始工作前（5 分钟）
 
-1. 打开 Claude Code，给 AI 一句话说清楚今天要做什么：
+1. 给 AI 一句话说清楚今天要做什么：
 
    > "今天的任务是 [具体目标]。成功标准是 [可验证的结果]。相关文件是 [路径]。"
 
@@ -43,13 +43,11 @@
 
 | 内容 | 存放路径 |
 |---|---|
-| 每日个人活动记录（与 project 无关） | `contexts/daily_log/YYYYMMDD_<name>.md` |
-| 会议记录、决策文档 | `projects/<project>/` 或 `adhoc_jobs/<project>/` |
-| 技术调研、研究报告 | `contexts/research/YYYYMMDD_<name>.md` |
-| 学到的东西、架构复盘、方法论思考 | `contexts/learning/<name>.md` |
-| 代码实验、一次性脚本 | `adhoc_jobs/<project>/` |
+| 原始输入：对话记录、一次性脚本、未加工的调研资料 | `01 raw/` |
+| 加了个人理解的复盘、方法论思考 | `02 trusted/` |
+| 项目相关文档 | `projects/<project>/` |
 
-新目录/项目记得更新 `rules/WORKSPACE.md`。
+新目录/项目记得更新 `03 refined/WORKSPACE.md`。
 
 ---
 
@@ -57,10 +55,10 @@
 
 **这是整个系统最重要的一步。**
 
-在 Claude Code 里粘贴（模板也在 `contexts/memory/PROMPTS.md`）：
+在 AI 里粘贴：
 
 ```
-回顾今天我们的工作。用红黄绿系统总结关键观察，追加到 contexts/memory/OBSERVATIONS.md：
+回顾今天我们的工作。用红黄绿系统总结关键观察，追加到 02 trusted/OBSERVATIONS.md：
 
 - 🔴 红色：跨项目的方法论或约束洞察（3 个月后仍有复用价值的认知结晶）
 - 🟡 黄色：活跃项目的关键决策、进展、遇到的问题
@@ -78,12 +76,10 @@
 
 ### 📅 周末：每周反思（15 分钟）
 
-积累 3 天以上观察后触发。
-
-#### 方式 A：手动
+积累 3 天以上观察后手动触发。
 
 ```
-读 contexts/memory/OBSERVATIONS.md，分析本周的观察记录：
+读 02 trusted/OBSERVATIONS.md，分析本周的观察记录：
 
 1. 识别重复出现的模式（尤其是红色和高优先黄色条目）
 2. 检查是否有条目满足晋升条件：
@@ -100,11 +96,11 @@
 
 | 内容类型 | 目标文件 |
 |---|---|
-| 决策原则、思维框架 | `rules/axioms/<name>.md` + 更新 `INDEX.md` |
-| 可复用工作流、操作流程 | `rules/skills/<name>.md` + 更新 `INDEX.md` |
-| AI 行为/沟通偏好 | `rules/COMMUNICATION.md` |
-| 用户画像更新 | `rules/USER.md` |
-| 工作空间路由变更 | `rules/WORKSPACE.md` |
+| 决策原则、思维框架 | `03 refined/axioms/<name>.md` + 更新 `INDEX.md` |
+| 可复用工作流、操作流程 | `03 refined/skills/<name>.md` + 更新 `INDEX.md` |
+| AI 行为/沟通偏好 | `03 refined/COMMUNICATION.md` |
+| 用户画像更新 | `03 refined/USER.md` |
+| 工作空间路由变更 | `03 refined/WORKSPACE.md` |
 
 ---
 
@@ -115,10 +111,10 @@
 ```
 对整个 context 系统做一次健康检查：
 
-1. 读 rules/axioms/INDEX.md：现有 axiom 还准确吗？需要基于新证据更新吗？
-2. 读 rules/skills/INDEX.md：有 skill 该退役或合并吗？
-3. 读 contexts/memory/OBSERVATIONS.md：有红色观察积压了好几周没晋升吗？为什么？
-4. 读 CLAUDE.md：太长了吗？需要拆分子文件吗？
+1. 读 03 refined/axioms/INDEX.md：现有 axiom 还准确吗？需要基于新证据更新吗？
+2. 读 03 refined/skills/INDEX.md：有 skill 该退役或合并吗？
+3. 读 02 trusted/OBSERVATIONS.md：有红色观察积压了好几周没晋升吗？为什么？
+4. 读 AGENTS.md：太长了吗？需要拆分子文件吗？
 5. 总结系统健康状况和下一步行动项。
 ```
 
@@ -133,7 +129,7 @@
 | 回答 | 怎么**想** | 怎么**做** |
 | 例子 | "AI 是放大器不是替代品" | "深度调研 workflow" |
 | 来源 | 只能从自身经历蒸馏，不能复制别人的 | 可移植，需适配 |
-| 位置 | `rules/axioms/` | `rules/skills/` |
+| 位置 | `03 refined/axioms/` | `03 refined/skills/` |
 
 ### 遇到 AI 反复失败怎么办
 
@@ -148,19 +144,6 @@
 
 **每当你需要向 AI 解释同一个流程第二次——写成 skill。**
 
-### CLAUDE.md 膨胀问题
+### AGENTS.md 膨胀问题
 
 超过 ~200 行就拆分为子文件引用。Context window 是有限资源，密度比长度重要。
-
----
-
-## 五、系统文件速查
-
-| 文件 | 作用 |
-|---|---|
-| `CLAUDE.md` | Session 入口，AI 每次启动必读 |
-| `rules/WORKSPACE.md` | 目录路由表，找文件前查这里 |
-| `rules/axioms/INDEX.md` | 所有 axiom 的索引 |
-| `rules/skills/INDEX.md` | 所有 skill 的索引 |
-| `contexts/memory/OBSERVATIONS.md` | 每日观察的积累地 |
-| `contexts/memory/PROMPTS.md` | 手动触发观察/反思的 prompt 模板 |

@@ -4,37 +4,36 @@
 
 ## 设计理念
 
-AI 的价值不来自模型智力，而来自你为它构建的 context 环境。这个环境必须随时间持续积累，形成"观察 -> 反思 -> 蒸馏 -> 改善工作"的飞轮。
+AI 的价值不来自模型智力，而来自你为它构建的 context 环境。这个环境必须随时间持续积累，形成"输入 -> 提炼 -> 蒸馏 -> 改善工作"的飞轮。
 
-## 三层记忆架构
+## 三层知识架构
 
 ```
-L3（全局约束）: rules/ 下所有文件 -> 每次 session 被动加载
-L1（每日观察）: contexts/memory/OBSERVATIONS.md -> 手动触发记录
-L2（每周反思）: 从 L1 蒸馏，晋升到 L3
+01 raw/       原始输入，不加工：对话记录、一次性脚本、未经过滤的笔记
+02 trusted/   对 raw 的提炼：OBSERVATIONS.md、加了个人理解的复盘、结构化反思
+03 refined/   对外公开、可复用：Axioms、Skills、核心指南
 ```
 
 ## 目录结构
 
 ```
-CLAUDE.md                        # Session 入口（Claude Code 自动加载）
-rules/
+AGENTS.md                        # Session 入口
+README.md
+01 raw/                          # 所有原始输入（本地，不上传）
+02 trusted/                      # 提炼后的观察与反思（本地，不上传）
+03 refined/                      # 对外公开的可复用知识系统
   SOUL.md                        # AI 身份与行为准则
   USER.md                        # 用户画像
   COMMUNICATION.md               # 沟通风格指南
   WORKSPACE.md                   # 目录路由速查
+  SOP.md                         # 日常工作操作手册
   axioms/                        # 从经历中蒸馏的决策原则
     INDEX.md
   skills/                        # 可复用的工作流和最佳实践
     INDEX.md
-contexts/
-  memory/                        # 记忆系统
-    OBSERVATIONS.md              # 每日观察 + 每周反思
-    PROMPTS.md                   # Observer/Reflector prompt 模板
-  research/                      # 调研报告
-  learning/                      # 学到的东西 / 复盘
-  daily_log/                     # 每日个人活动记录
-adhoc_jobs/                      # 临时项目
+  tools/                         # 工具脚本（Confluence 同步、语义搜索等）
+projects/                        # 活跃项目上下文
+archive/                         # 归档内容
 ```
 
 ## 致谢

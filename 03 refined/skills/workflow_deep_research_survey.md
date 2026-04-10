@@ -4,7 +4,7 @@
 
 - **类型**: Workflow
 - **适用场景**: 需要对某个主题进行深度、全面、可验证的第三方调研
-- **输出位置**: `contexts/research/`
+- **输出位置**: `01 raw/`
 - **创建日期**: 2026-02-19
 - **最后更新**: 2026-03-09
 
@@ -103,7 +103,7 @@ task(
 - 关键引用保留原文摘录（不是总结）
 - 结构清晰：核心结论 → 分维度分析 → 交叉验证 → 结论与建议
 
-**存储位置**: `contexts/research/<topic>_survey_YYYYMMDD.md`
+**存储位置**: `01 raw/<topic>_survey_YYYYMMDD.md`
 
 **命名规则**: 
 - 英文主题：`<topic>_survey_YYYYMMDD.md`
