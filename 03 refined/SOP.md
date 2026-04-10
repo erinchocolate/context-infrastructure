@@ -159,8 +159,9 @@
 1. 读 03 refined/axioms/INDEX.md：现有 axiom 还准确吗？需要基于新证据更新吗？
 2. 读 03 refined/skills/INDEX.md：有 skill 该退役或合并吗？
 3. 读 02 trusted/OBSERVATIONS.md：有红色观察积压了好几周没晋升吗？为什么？
-4. 读 AGENTS.md：太长了吗？需要拆分子文件吗？
-5. 总结系统健康状况和下一步行动项。
+4. 读所有 02 trusted/YYYYMMDD_weekly_reflection.md 的"继续观察"区域：有条目跨越了两次以上反思还没有结论吗？这些往往是真正难的问题，或者值得写成专题复盘。
+5. 读 AGENTS.md：太长了吗？需要拆分子文件吗？
+6. 总结系统健康状况和下一步行动项。
 ```
 
 ---
