@@ -48,10 +48,15 @@ Before doing anything else:
 
 ## Memory System（记忆系统）
 
-三层知识架构：
+根目录三层知识架构按**知识加工程度**分层（捕获 → 个人理解 → 规范化）：
 - **01 raw/**：所有原始输入（对话记录、脚本、未加工笔记），本地存储
 - **02 trusted/**：对 raw 的提炼（`OBSERVATIONS.md` 每日观察 + 每周反思），agent 主动检索
 - **03 refined/**：每次 session 被动加载的可复用知识系统（axioms、skills、核心指南）
+
+**项目层**三层知识架构按**信息流方向**分层：
+- **01 raw/**：所有原始输入（会议笔记、需求文档、Bug 报告、AI 对话输出），本地存储
+- **02 trusted/**：帮助我/AI理解和操作此项目的稳定知识，架构文档、设计决策、研究结论、SOP
+- **03 refined/**：准备分享给项目外受众的内容，Stakeholder 简报、团队展示、Confluence 输出文档
 
 ## Safety
 

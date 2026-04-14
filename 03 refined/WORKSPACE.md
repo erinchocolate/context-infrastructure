@@ -8,6 +8,7 @@
 - **持续进行的项目上下文**（文档、会议记录、决策、状态）：`projects/<project>/`
 - 写代码 / 跑脚本 / 一次性项目：`01 raw/<project>/`
 - 工具脚本（邮件、语义搜索、分享报告等）：`03 refined/tools/`
+- **公司级平台规范**（Python / SQL / Databricks / 表设计标准等，跨项目通用）：`projects/guidelines/`
 
 ### 知识与记录
 - 原始输入（对话记录、调研资料、未加工笔记）：`01 raw/`
@@ -42,3 +43,4 @@
 <!-- 随着项目增长，在这里添加活跃项目的快捷路由 -->
 <!-- 格式：- `project-name` -> `projects/project_name/` (说明) -->
 - `marvin` → `projects/marvin/` （Contact Energy 内部 RAG 信息检索工具）
+- `guidelines` → `projects/guidelines/` （公司级平台规范：Python、SQL、Databricks、表设计、转换逻辑等）
