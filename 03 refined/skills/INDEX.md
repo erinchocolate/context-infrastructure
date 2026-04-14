@@ -29,6 +29,11 @@
 
 特定任务的完整工作流程。
 
+- [PR Code Review](./workflow_pr_review.md) ✅ — 对 `data_platform` 仓库 PR/branch 进行 AI 辅助代码审查
+  - **脚本**：`03 refined/tools/pr_review.sh`（输入 branch 名 → 输出 diff + changed files 摘要）
+  - **触发**：「帮我 review `<branch名>` 这个 PR/branch」
+  - **输出**：Markdown 报告写入 `01 raw/<date>_pr_review_<branch>.md`
+  - **流程**：拉取 diff → 自动匹配 guidelines → 询问项目文档 → 并行 sub-agent 分析 → 生成报告
 - [Confluence 双向同步](./workflow_confluence_sync.md) ✅ — Confluence ↔ Repo 文档双向同步（所有脚本位于 `03 refined/tools/confluence/`）
   - **Push**（repo → Confluence）：`03 refined/tools/confluence/sync_docs_to_confluence.py`
   - **Pull**（Confluence → repo）：`03 refined/tools/confluence/pull_from_confluence.py`（版本追踪，幂等）
