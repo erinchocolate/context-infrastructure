@@ -43,4 +43,4 @@
 <!-- 随着项目增长，在这里添加活跃项目的快捷路由 -->
 <!-- 格式：- `project-name` -> `projects/project_name/` (说明) -->
 - `marvin` → `projects/marvin/` （Contact Energy 内部 RAG 信息检索工具）
-- `guidelines` → `projects/guidelines/` （公司级平台规范：Python、SQL、Databricks、表设计、转换逻辑等）
+- `guidelines` → `projects/guidelines/` （公司级平台规范，完整列表见 `projects/guidelines/index.md`）

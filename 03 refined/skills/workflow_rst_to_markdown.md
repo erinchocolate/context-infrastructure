@@ -87,9 +87,11 @@ python3 "03 refined/tools/rst_to_markdown.py" \
 
 ---
 
-## 已转换的标准文档（2026-04-13）
+## 已转换的标准文档
 
-存放路径：`projects/marvin/02 trusted/guidelines/`
+存放路径：`projects/guidelines/`
+
+### 2026-04-13 首批
 
 | 文件 | 内容 |
 |---|---|
@@ -102,6 +104,14 @@ python3 "03 refined/tools/rst_to_markdown.py" \
 | `databricks_standards.md` | Databricks 标准（计算类型选择、Airflow 算子） |
 | `databricks_apps.md` | Databricks Apps 使用规范 |
 | `vector_search.md` | Vector Search 标准（端点、索引、代码示例） |
+
+### 2026-04-15 新增
+
+| 文件 | RST 来源 | 内容 |
+|---|---|---|
+| `design.md` | `standards/design.rst` | 设计标准（Canvas、数据产品设计、模板、影响评估） |
+| `data_quality.md` | `standards/data_quality.rst` | 数据质量框架（维度、检查语法、transform 集成） |
+| `local_dab_development.md` | `user_guides/development_process/local_dab_development.rst` | 本地 DAB 开发与测试流程 |
 
 ---
 
