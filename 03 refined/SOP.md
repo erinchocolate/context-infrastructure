@@ -190,6 +190,21 @@
 
 **每当你需要向 AI 解释同一个流程第二次——写成 skill。**
 
+### 技术事实不晋升
+
+**技术事实**（平台行为、语言特性、API 约束）理解后即永久内化，不需要反复执行——不晋升为 skill 或 axiom，保留在 OBSERVATIONS.md 标注 ✅ 即可。
+
+判断方法：有没有人需要**按这个流程操作**某件事？
+- 是 → 可以是 Skill
+- 否，只需要"知道这件事" → 技术事实，留在 OBSERVATIONS.md
+
+| 类型 | 例子 | 正确归宿 |
+|---|---|---|
+| 语言/平台底层行为 | "Bash 重定向先于函数执行" | OBSERVATIONS.md ✅ |
+| 服务约束 | "CDF 不回溯历史" | OBSERVATIONS.md |
+| 一次性 gotcha | "lxml Lambda 需要 manylinux 轮子" | OBSERVATIONS.md 或 `01 raw/` 技术笔记 |
+| 可复用工作流 | "PR review 五阶段流程" | `03 refined/skills/` |
+
 ### AGENTS.md 膨胀问题
 
 超过 ~200 行就拆分为子文件引用。Context window 是有限资源，密度比长度重要。
