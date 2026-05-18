@@ -36,7 +36,6 @@
 | 文件 | 用途 |
 |---|---|
 | `03 refined/tools/confluence/convert_confluence_docs.py` | Confluence .doc → Markdown 批量转换脚本（见 `03 refined/skills/workflow_confluence_sync.md`） |
-| `03 refined/tools/semantic_search/` | 语义搜索工具（见 `03 refined/skills/semantic_search.md`） |
 
 ## 快速查询
 
